@@ -2,46 +2,57 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+
+/**
+ * Triple A (AAA)
+ *
+ * Arrange
+ * Act
+ * Assert
+ *
+ */
+
 class FizzBuzzTest {
 
     @Test
-    void shouldReturnFizz() {
+    void whenANumberThatIsNotMultipleOfThreeOrFiveIsEnteredShouldReturnTheSameNumber() {
+
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        int number = 7;
+
+        String result = fizzBuzz.calc(number);
+
+        assertThat(result, is("7"));
+    }
+
+    @Test
+    void whenANumberThatIsMultipleOfThreeIsEnteredShouldReturnFizz(){
+
+        FizzBuzz fizzBuzz = new FizzBuzz();
 
         int number = 3;
-        String code = new FizzBuzz().convert(number);
+        String result = fizzBuzz.calc(number);
 
-        assertThat(code, is("Fizz"));
-
+        assertThat(result, is("Fizz"));
     }
 
     @Test
-    void shouldReturnBuzz() {
+    void whenANumberThatIsMultipleOfFiveIsEnteredShouldReturnBuzz(){
+        FizzBuzz fizzBuzz = new FizzBuzz();
 
         int number = 5;
-        String code = new FizzBuzz().convert(number);
+        String result = fizzBuzz.calc(number);
 
-        assertThat(code, is("Buzz"));
-
+        assertThat(result, is("Buzz"));
     }
-
     @Test
-    void shouldReturnFizzBuzz() {
+    void whenANumberThatIsMultipleOfFiveAndThreeIsEnteredShouldReturnFizzBuzz(){
+        FizzBuzz fizzBuzz = new FizzBuzz();
 
         int number = 15;
-        String code = new FizzBuzz().convert(number);
+        String result = fizzBuzz.calc(number);
 
-        assertThat(code, is("FizzBuzz"));
-
-    }
-
-    @Test
-    void shouldReturnTheSameNumber() {
-
-        int number = 7;
-        String code = new FizzBuzz().convert(number);
-
-        assertThat(code, is("7"));
-
+        assertThat(result, is("FizzBuzz"));
     }
 
 
